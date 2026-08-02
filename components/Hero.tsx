@@ -36,6 +36,7 @@ export default function Hero() {
 
     const scopeEl = root.current;
     const nav = utils.$('[data-nav]');
+    const name = utils.$(scopeEl.querySelectorAll('.hero-name'));
     const chars = utils.$(scopeEl.querySelectorAll('.hero-char'));
     const sub = utils.$(scopeEl.querySelectorAll('.hero-sub'));
     const ctas = utils.$(scopeEl.querySelectorAll('.hero-cta'));
@@ -47,6 +48,16 @@ export default function Hero() {
     }
 
     tl.add(
+      name,
+      {
+        opacity: [0, 1],
+        translateY: [12, 0],
+        duration: 500,
+        ease: 'outQuad',
+      },
+      '-=250',
+    )
+      .add(
       chars,
       {
         opacity: [0, 1],
@@ -55,7 +66,7 @@ export default function Hero() {
         ease: 'outExpo',
         delay: stagger(30, { from: 'center' }),
       },
-      '-=200',
+      '-=350',
     )
       .add(
         sub,
@@ -89,9 +100,12 @@ export default function Hero() {
       ref={root}
       className="flex min-h-[calc(100svh-73px)] scroll-mt-[73px] flex-col justify-center px-8 py-24 md:px-16 lg:px-24"
     >
+      <p className="hero-name text-sm font-medium uppercase tracking-[0.2em] text-muted">
+        Dustin Tran
+      </p>
       <h1
         aria-label={HEADLINE}
-        className="max-w-5xl text-[clamp(64px,9.5vw,120px)] font-extrabold leading-[0.95] tracking-tight"
+        className="mt-6 max-w-5xl text-[clamp(64px,9.5vw,120px)] font-extrabold leading-[0.95] tracking-tight"
       >
         <HeadlineChars />
       </h1>

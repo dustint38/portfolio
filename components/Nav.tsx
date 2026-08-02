@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { ArrowRight } from '@/components/icons';
+import ScrollProgress from '@/components/ScrollProgress';
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -67,7 +68,8 @@ export default function Nav() {
       data-nav
       className="anim-nav sticky top-0 z-50 border-b border-line bg-canvas"
     >
-      <div className="flex h-[72px] items-center justify-between px-8 md:px-16 lg:px-24">
+      <div className="relative flex h-[72px] items-center justify-between px-8 md:px-16 lg:px-24">
+        <ScrollProgress />
         <a
           href="#home"
           onClick={() => setOpen(false)}

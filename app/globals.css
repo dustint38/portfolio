@@ -43,11 +43,16 @@ body {
   }
 
   .anim-nav,
+  .hero-name,
   .hero-char,
   .hero-sub,
   .hero-cta,
   .reveal {
     opacity: 0;
+  }
+
+  .hero-name {
+    transform: translateY(12px);
   }
 
   .hero-char {
@@ -61,4 +66,14 @@ body {
   .reveal {
     transform: translateY(24px);
   }
+
+  .marquee-row-alt {
+    transform: translateX(-14vw);
+  }
+}
+
+/* The progress hairline only exists as scroll feedback; without JS (or with
+   reduced motion) it simply never appears, so it stays collapsed always. */
+.scroll-progress {
+  transform: scaleX(0);
 }

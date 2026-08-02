@@ -17,8 +17,13 @@ Next.js 14 App Router, TypeScript, Tailwind CSS, anime.js v4
 - All animation lives in `useEffect` in `'use client'` components, scoped to a ref
 - Always `return () => animation.revert()` for cleanup
 - Always guard with `prefersReducedMotion()` from `/lib/motion.ts`
-- Exactly four animated moments exist: hero char stagger, page-load timeline,
-  scroll section reveals, arrow button spring hover. Do not add more.
+- Exactly six animated moments exist: hero char stagger, page-load timeline
+  (includes the "Dustin Tran" eyebrow), scroll section reveals, arrow button
+  spring hover, scroll-progress hairline (scroll-scrubbed via `onScroll` +
+  `sync: true`), and the ghost name marquee above the footer (scroll-scrubbed,
+  rows move opposite directions). Do not add more.
+- Scroll-scrubbed animations are allowed only for the hairline and the
+  marquee; everything else stays trigger-once. No looping/ambient motion.
 
 ## Sections
 Hero → Projects → Experience → Contact
