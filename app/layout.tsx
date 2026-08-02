@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geist.variable} antialiased`}>
         <noscript>
-          <style>{`.anim-nav,.hero-name,.hero-char,.hero-sub,.hero-cta,.reveal{opacity:1!important;transform:none!important}`}</style>
+          <style>{`.anim-nav,.hero-name,.hero-char,.hero-sub,.hero-cta,.reveal,.bg-burst{opacity:1!important;transform:none!important}`}</style>
         </noscript>
         {children}
       </body>

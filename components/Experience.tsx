@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { useSectionReveal } from '@/lib/useSectionReveal';
+import { RESUME_URL } from '@/lib/site';
 import { ArrowRight } from '@/components/icons';
 
 const jobs = [
@@ -79,14 +80,14 @@ export default function Experience() {
             <h3 className="text-xl font-bold md:text-2xl">
               {job.company} — {job.role}
             </h3>
-            <p className="mt-2 text-sm text-muted">
+            <p className="mt-2 text-[15px] text-muted">
               {job.location} | {job.dates}
             </p>
             <ul className="mt-5 max-w-3xl space-y-3">
               {job.bullets.map((bullet) => (
                 <li
                   key={bullet}
-                  className="flex gap-3 text-[16px] leading-[1.6] text-body"
+                  className="flex gap-3 text-[17px] leading-[1.6] text-body"
                 >
                   <span aria-hidden="true" className="text-dim">
                     —
@@ -108,10 +109,10 @@ export default function Experience() {
             {education.map((entry) => (
               <div key={entry.school}>
                 <p className="text-lg font-bold">{entry.school}</p>
-                <p className="mt-1 text-[16px] leading-[1.6] text-body">
+                <p className="mt-1 text-[17px] leading-[1.6] text-body">
                   {entry.degree}
                 </p>
-                <p className="mt-1 text-sm text-muted">{entry.date}</p>
+                <p className="mt-1 text-[15px] text-muted">{entry.date}</p>
               </div>
             ))}
           </div>
@@ -123,8 +124,8 @@ export default function Experience() {
           <dl className="mt-6 space-y-5">
             {skills.map((skill) => (
               <div key={skill.group}>
-                <dt className="text-sm text-dim">{skill.group}</dt>
-                <dd className="mt-1 text-[16px] leading-[1.6] text-body">
+                <dt className="text-[15px] text-dim">{skill.group}</dt>
+                <dd className="mt-1 text-[17px] leading-[1.6] text-body">
                   {skill.items}
                 </dd>
               </div>
@@ -135,11 +136,12 @@ export default function Experience() {
 
       <div className="reveal mt-16 md:mt-20">
         <a
-          href="/dustin-tran-resume.pdf"
-          download
+          href={RESUME_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-3 text-lg font-semibold transition-colors duration-200 hover:text-body"
         >
-          Download Resume
+          View Resume
           <ArrowRight className="h-5 w-5" />
         </a>
       </div>

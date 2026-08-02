@@ -117,10 +117,10 @@ export default function Projects() {
                         <span className="block text-[clamp(32px,5vw,64px)] font-bold leading-[1.05] tracking-tight">
                           {project.name}
                         </span>
-                        <span className="mt-3 block max-w-2xl text-[17px] leading-[1.6] text-body">
+                        <span className="mt-3 block max-w-2xl text-[18px] leading-[1.6] text-body">
                           {project.purpose}
                         </span>
-                        <span className="mt-3 block text-sm leading-[1.6] text-dim">
+                        <span className="mt-3 block text-[15px] leading-[1.6] text-dim">
                           {project.stack.join(' · ')}
                         </span>
                       </span>
@@ -144,7 +144,7 @@ export default function Projects() {
                     {project.highlights.map((highlight) => (
                       <li
                         key={highlight}
-                        className="flex gap-3 text-[16px] leading-[1.6] text-body"
+                        className="flex gap-3 text-[17px] leading-[1.6] text-body"
                       >
                         <span aria-hidden="true" className="text-dim">
                           —

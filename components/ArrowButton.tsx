@@ -18,6 +18,8 @@ type ArrowButtonProps = {
   /** When defined, the button acts as a disclosure toggle and the
       arrow points down while open (rotated wrapper, no transition). */
   open?: boolean;
+  /** Static arrow orientation; 'up' rotates the wrapper -90deg. */
+  direction?: 'right' | 'up';
   controls?: string;
   className?: string;
 };
@@ -30,6 +32,7 @@ export default function ArrowButton({
   onClick,
   size = 'md',
   open,
+  direction = 'right',
   controls,
   className = '',
 }: ArrowButtonProps) {
@@ -70,7 +73,9 @@ export default function ArrowButton({
   const baseClasses = `inline-flex items-center justify-center rounded-full border border-white/30 text-ink transition-colors duration-200 hover:border-white hover:bg-white hover:text-canvas ${sizeClasses} ${className}`;
 
   const icon = (
-    <span className={`inline-flex ${open ? 'rotate-90' : ''}`}>
+    <span
+      className={`inline-flex ${open ? 'rotate-90' : direction === 'up' ? '-rotate-90' : ''}`}
+    >
       <span ref={iconRef} className="inline-flex">
         <ArrowRight className={iconSize} />
       </span>

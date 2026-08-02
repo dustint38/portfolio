@@ -33,7 +33,7 @@ export default function Contact() {
         />
       </div>
 
-      <p className="reveal mt-8 max-w-2xl text-[17px] leading-[1.6] text-body">
+      <p className="reveal mt-8 max-w-2xl text-[18px] leading-[1.6] text-body">
         Open to SWE internships and new grad roles. Reach out anytime.
       </p>
 

@@ -4,7 +4,7 @@ const EMAIL = 'dustint3841@gmail.com';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line px-8 py-12 md:px-16 lg:px-24">
+    <footer className="relative z-10 border-t border-line px-8 py-12 md:px-16 lg:px-24">
       <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div className="flex gap-8">
           <a

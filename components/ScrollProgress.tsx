@@ -35,7 +35,7 @@ export default function ScrollProgress() {
     <div
       ref={bar}
       aria-hidden="true"
-      className="scroll-progress absolute -bottom-px left-0 h-px w-full origin-left bg-white"
+      className="scroll-progress absolute -bottom-px left-0 h-px w-full origin-left bg-accent"
     />
   );
 }

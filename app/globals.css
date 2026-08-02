@@ -11,6 +11,7 @@
   --color-muted: #888888;
   --color-dim: #555555;
   --color-line: rgba(255, 255, 255, 0.12);
+  --color-accent: #2e7d32;
 }
 
 html {
@@ -67,8 +68,8 @@ body {
     transform: translateY(24px);
   }
 
-  .marquee-row-alt {
-    transform: translateX(-14vw);
+  .bg-burst {
+    opacity: 0;
   }
 }
 
