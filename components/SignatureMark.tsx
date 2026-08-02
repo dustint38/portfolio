@@ -7,10 +7,10 @@ import ArrowButton from '@/components/ArrowButton';
 
 /**
  * Animated moment 6 — closing signature.
- * An angular "DT" monogram draws itself stroke by stroke while the band
- * passes through the viewport, scrubbed by scroll (sync) so it assembles
- * on the way down and unwinds on the way up. The thresholds end at
- * 'bottom bottom' so the mark is fully drawn before max scroll.
+ * An angular "DT" monogram draws itself stroke by stroke. It triggers
+ * late — only once the band is half in view near the very bottom — then
+ * plays as a slow ~1.8s timed sequence the user watches while parked.
+ * `repeat: true` resets it off-screen so it replays on every visit.
  * The back-to-top arrow reuses the moment-4 spring hover.
  */
 export default function SignatureMark() {
@@ -24,14 +24,13 @@ export default function SignatureMark() {
     );
     const animation = animate(strokes, {
       draw: ['0 0', '0 1'],
-      duration: 600,
-      delay: stagger(140),
+      duration: 900,
+      delay: stagger(450),
       ease: 'inOutQuad',
       autoplay: onScroll({
         target: root.current,
-        enter: 'bottom top',
-        leave: 'bottom bottom',
-        sync: true,
+        enter: 'bottom center',
+        repeat: true,
       }),
     });
 
